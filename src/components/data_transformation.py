@@ -1,4 +1,4 @@
-#Main purpose of data transformation is to do feature engineering, data cleaning , 
+#Main purpose of data transformation is to do feature engineering, data cleaning , if we want to change a dataset into another like categorical to numerical
 import sys
 from dataclasses import dataclass
 import numpy as np
@@ -41,7 +41,7 @@ class DataTransformation:
 
             num_pipeline= Pipeline(
                 steps=[
-                ("imputer",SimpleImputer(strategy="median")),
+                ("imputer",SimpleImputer(strategy="median")),#imputer is respb. in handling missing values
                 ("scaler",StandardScaler())
 
                 ]
@@ -115,7 +115,7 @@ class DataTransformation:
                 file_path=self.data_transformation_config.preprocessor_obj_file_path,
                 obj=preprocessing_obj
 
-            )
+            )#Its a function we ll save in utils
 
             return (
                 train_arr,
