@@ -64,3 +64,4 @@ def load_object(file_path):
 
     except Exception as e:
         raise CustomException(e, sys)
+    #the error was due to an attempt to reference a variable (i) that didn’t exist in the current context, and the fix involved directly using the model_name from the loop. adapted the code, and that resolved the issue. 
